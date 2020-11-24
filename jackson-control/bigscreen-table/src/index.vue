@@ -419,9 +419,9 @@ export default {
             width: '',
             color: '#fff'
           }
-          // if(indexInner === 5 && itemInner === '未完成') {
-          //   obj.color = 'red'
-          // }
+          if(indexInner === 5 && itemInner === '未完成') {
+            obj.color = 'red'
+          }
           this.contentStyle[obj.head] && (obj.style = this.contentStyle[obj.head])
           this.contentWidth[obj.head] && (obj.width = this.contentWidth[obj.head])
           if (this.isEventTabel) {
