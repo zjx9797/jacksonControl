@@ -1,0 +1,20 @@
+{
+  "name": "bigscreen-rotate",
+  "version": "1.0.4",
+  "label": "转圈圈",
+  "description": "转圈圈动画啊",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "bigscreen-table-static",
+  "version": "1.0.6",
+  "label": "大屏表格组件无滚动效果",
+  "description": "没有滚动效果的",
+  "author": "J &lt;xiaoxin@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

@@ -1,0 +1,20 @@
+{
+  "name": "operate-new-table",
+  "version": "3.0.12",
+  "label": "",
+  "description": "A Matrix custom component.",
+  "author": "Ray &lt;jialei@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "libs": [{
+    "keyword": "lodash@4.17.15",
+    "type": "js",
+    "url": "https://cdn.bootcss.com/lodash.js/4.17.15/lodash.core.js"
+  }]
+}

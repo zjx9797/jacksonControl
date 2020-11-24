@@ -1,0 +1,67 @@
+.pie-tgi {
+  height: 100%;
+  box-sizing: border-box;
+  // position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  .show-percentage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    &-icon {
+      font-size: 2.67vw;
+      @media screen and (max-width: 1200px) {
+        font-size: 36px;
+      }
+      @media screen and (min-width: 2360px) {
+        font-size: 56px;
+      }
+      color: var(--color, #00BCBE);
+    }
+    &-items {
+      font-size: 14px;
+      margin-top: 10px;
+      color: var(--color, #f4c243);
+      .number {
+        font-size: var(--chart-label-value-font-size,'24px');
+      }
+    }
+    &-tgi {
+      font-weight: normal;
+      margin-top: 6px;
+      font-size: 13px;
+      .number {
+        color: var(--color, #f4c243);
+        font-size: var(--chart-label-value-font-size,'24px');
+      }
+    }
+    .label{
+      color: var(--chart-label-color, #000000);
+      font-size: var(--chart-label-font-size,'12px');
+    }
+    &.female {
+      right: 5%;
+    }
+    &.male {
+      left: 5%;
+    }
+  }
+
+  &.too-less {
+    .show-percentage {
+      &.female {
+        transform: translate(25%, -50%);
+        right: 5%;
+      }
+      &.male {
+        transform: translate(-25%, -50%);
+        left: 5%;
+      }
+    }
+  }
+}

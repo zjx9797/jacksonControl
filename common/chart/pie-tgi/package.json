@@ -1,0 +1,20 @@
+{
+  "name": "pie-tgi",
+  "version": "1.0.8",
+  "label": "TGI环形图",
+  "description": "TGI环形图",
+  "author": "huijie@datastory.com.cn",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

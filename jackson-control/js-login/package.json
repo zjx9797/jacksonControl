@@ -1,0 +1,21 @@
+{
+  "name": "js-login",
+  "version": "1.0.6",
+  "label": "江森登录页面",
+  "description": "江森登录页面",
+  "category": "login-page",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

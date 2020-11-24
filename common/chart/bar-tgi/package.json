@@ -1,0 +1,20 @@
+{
+  "name": "bar-tgi",
+  "version": "1.1.5",
+  "label": "TGI柱状图",
+  "description": "TGI柱状图",
+  "author": "huijie@datastory.com.cn",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

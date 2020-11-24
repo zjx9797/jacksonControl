@@ -1,0 +1,20 @@
+{
+  "name": "offline-download",
+  "version": "1.0.11",
+  "label": "离线明细数据下载",
+  "description": "A Matrix custom component.",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

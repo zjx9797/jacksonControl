@@ -1,0 +1,20 @@
+{
+  "name": "clear-conditions",
+  "version": "1.0.1",
+  "label": "清空联动的按钮，需要自行配置联动",
+  "description": "清空当前联动的按钮",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

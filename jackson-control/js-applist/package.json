@@ -1,0 +1,21 @@
+{
+  "name": "js-applist",
+  "version": "1.0.2",
+  "label": "江森自定义菜单页",
+  "description": "江森自定义菜单页",
+  "category": "index-page",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

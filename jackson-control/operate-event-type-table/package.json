@@ -1,0 +1,16 @@
+{
+  "name": "operate-event-type-table",
+  "version": "3.0.5",
+  "label": "",
+  "description": "事件类型管理表格组件",
+  "author": "holly &lt;holly@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "libs": []
+}

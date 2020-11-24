@@ -1,0 +1,20 @@
+{
+  "name": "operate-event-type-manage",
+  "version": "1.0.3",
+  "label": "",
+  "description": "事件类型管理fit配置组件",
+  "author": "J &lt;xiaoxin@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

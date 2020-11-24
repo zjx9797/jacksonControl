@@ -1,0 +1,16 @@
+{
+  "name": "operate-event-type-filter",
+  "version": "3.0.0",
+  "label": "",
+  "description": "A Matrix custom component.",
+  "author": "Ray &lt;jialei@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "libs": []
+}

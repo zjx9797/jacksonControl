@@ -1,0 +1,18 @@
+{
+  "name": "trip-info-map",
+  "version": "1.0.1",
+  "label": "在途信息",
+  "description": "在途信息",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+    "resize-observer-polyfill": "^1.5.1"
+  },
+  "dependencies": {},
+  "libs": []
+}

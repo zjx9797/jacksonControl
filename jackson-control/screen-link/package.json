@@ -1,0 +1,20 @@
+{
+  "name": "screen-link",
+  "version": "1.0.13",
+  "label": "跳转按钮",
+  "description": "跳转按钮",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

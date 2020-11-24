@@ -1,0 +1,20 @@
+{
+  "name": "bigscreen-text",
+  "version": "1.0.1",
+  "label": "大屏文本组件",
+  "description": "大屏文本组件",
+  "author": "ryan &lt;ryan@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": {
+
+  },
+  "libs": []
+}

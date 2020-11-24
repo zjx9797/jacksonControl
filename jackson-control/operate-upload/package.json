@@ -1,0 +1,16 @@
+{
+  "name": "operate-upload",
+  "version": "1.0.3",
+  "label": "",
+  "description": "江森 - 数据上传组件",
+  "author": "holly &lt;holly@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {},
+  "dependencies": {},
+  "libs": []
+}

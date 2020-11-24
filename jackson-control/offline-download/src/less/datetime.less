@@ -1,0 +1,146 @@
+// 覆盖 datetime 的样式
+@normal-border-color: rgba(#047CFF, 0.6);
+@active-border-color: #047CFF;
+@background-color: #000436;
+@normal-font-color: rgba(#047CFF, 0.6);
+@active-font-color: #047CFF;
+
+@popup-border-color: #047CFF;
+@popup-background-color: #000436;
+@popup-inner-border-color: #047CFF;
+@popup__year-color: #fff;
+@popup-select-border-color: #047CFF;
+@popup-select-background-color: #000436;
+@popup-select-font-color: #047CFF;
+@popup-select-font-color_active: #047CFF;
+@popup-select-border-color_active: #047CFF;
+
+// 日历样式
+@calendar__week-color: #fff;
+@calendar__available-day-color: #fff;
+@calendar__available-day-color_hover: #047CFF;
+@calendar__not-this-month-color: rgba(#047CFF, 0.5);
+@calendar__range-bg-color: rgba(#047CFF, 0.3);
+@calendar__range-color: #047CFF;
+@calendar__range-end-bg-color: #047CFF;
+@calendar__range-end-color: #fff;
+@calendar__today-color: #047CFF;
+
+.c-el-datetime {
+  &.el-input__inner {
+    border: 1px solid @normal-border-color;
+    background-color: @background-color;
+    border-radius: 4px;
+    color: @active-font-color;
+  }
+
+  &.el-date-editor .el-range-separator,
+  &.el-date-editor .el-range__icon,
+  &.el-date-editor .el-range__close-icon {
+    color: @normal-font-color;
+  }
+
+  &.el-date-editor .el-range-input {
+    background-color: @background-color;
+    color: @active-font-color;
+    &::placeholder {
+      color: @normal-font-color;
+    }
+  }
+
+  &.is-active {
+    &.el-input__inner {
+      border: 1px solid @active-border-color;
+      color: @active-font-color;
+    }
+    &.el-date-editor .el-range-separator,
+    &.el-date-editor .el-range__icon,
+    &.el-date-editor .el-range__close-icon,
+    &.el-date-editor .el-range-input {
+      color: @active-font-color;
+    }
+  }
+}
+
+.c-el-datetime__popup {
+  &.el-picker-panel {
+    border-color: @popup-border-color;
+    background-color: @popup-background-color;
+    border-radius: 4px;
+  }
+  .el-date-range-picker__time-header {
+    border-bottom-color: @popup-inner-border-color;
+  }
+  .el-date-range-picker__time-header > .el-icon-arrow-right {
+    color: @popup-select-font-color_active;
+  }
+  .el-date-range-picker__time-header .el-input__inner {
+    background-color: @popup-select-background-color;
+    border-color: @popup-select-border-color;
+    color: @popup-select-font-color;
+    &::placeholder {
+      color: @popup-select-font-color;
+    }
+    &:focus {
+      color: @popup-select-font-color_active;
+      border-color: @popup-select-border-color_active;
+    }
+  }
+
+  .el-date-range-picker__header {
+    color: @popup__year-color;
+    .el-picker-panel__icon-btn {
+      color: @popup-border-color;
+    }
+  }
+
+  .el-date-table {
+    th {
+      color: @calendar__week-color;
+      border-bottom-color: @popup-inner-border-color;
+      text-align: center;
+    }
+    td.available {
+      color: @calendar__available-day-color;
+      &:hover {
+        color: @calendar__available-day-color_hover;
+      }
+    }
+    td.prev-month, td.next-month {
+      color: @calendar__not-this-month-color;
+    }
+    td.in-range div {
+      background-color: @calendar__range-bg-color;
+      color: @calendar__range-color;
+    }
+    td.start-date div {
+      background-color: @calendar__range-bg-color;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    td.start-date span {
+      background-color: @calendar__range-end-bg-color;
+      color: @calendar__range-end-color;
+      border-radius: 4px;
+    }
+    td.end-date div {
+      background-color: @calendar__range-bg-color;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    td.end-date span {
+      background-color: @calendar__range-end-bg-color;
+      color: @calendar__range-end-color;
+      border-radius: 4px;
+    }
+    td.today:not(.start-date):not(.end-date) span {
+      color: @calendar__today-color;
+      border: 1px solid @calendar__today-color;
+      border-radius: 4px;
+    }
+  }
+
+  .el-date-range-picker__content.is-left {
+    border-right-color: @popup-inner-border-color;
+  }
+}
