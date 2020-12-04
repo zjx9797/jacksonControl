@@ -1,6 +1,6 @@
 module.exports = {
   index: 'src/index.vue',
   dev: {
-    matrixPort: 1233
+    matrixPort: 2000
   }
 }

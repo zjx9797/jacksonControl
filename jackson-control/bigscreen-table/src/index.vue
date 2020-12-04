@@ -29,7 +29,7 @@
                   :key="indexInner"
                   :class="[{'bigscreen-table__flex': !itemInner.width}, itemInner.class]"
                   :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight}; color: ${itemInner.color};`">
-                  {{ itemInner.value }}
+                  {{ itemInner.value }}<span :class="['iconfont',itemInner.icon]"></span>
                 </li>
               </template>
             </ul>
@@ -42,8 +42,8 @@
                 <li
                   :key="indexInner"
                   :class="[{'bigscreen-table__flex': !itemInner.width}, itemInner.class]"
-                  :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight};`">
-                  {{ itemInner.value }}
+                  :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight}; color: ${itemInner.color};`">
+                  {{ itemInner.value }}<span :class="['iconfont',itemInner.icon]"></span>
                 </li>
               </template>
             </ul>
@@ -100,7 +100,7 @@ const chartLabelAliasFormatter = function (label = '', aliasMap = {}) {
 }
 import setting from './setting'
 import mixin from './mixin'
-
+import '@/assets/icon/iconfont.css'
 export default {
   name: 'bigscreen-table',
   props: ['val'],
@@ -312,7 +312,7 @@ export default {
         const bodyMap = madeBody.map(this.dealEveryBodyData)
         // 当mapData.bodyMap，没有数据时是属于第一次渲染，不做过滤
         this.dataBody = bodyMap
-        console.log('bodyMap', bodyMap);
+        // console.log('bodyMap', bodyMap);
 
         this.clearTime()
         this.scrollInit()
@@ -410,17 +410,56 @@ export default {
         key: `data${keyId ++}`,
         value: []
       }
+      var a = ''
+      a = item[this.dataHead.findIndex((a) => a.value == '告警级别')]
+      var b = ''
+      b = item[this.dataHead.findIndex((a) => a.value == '最大时长')]
+      var e = ''
+      e = item[this.dataHead.findIndex((a) => a.value == '创建人')+2]
+      let d = '#fff'
+      let f = ''
+      console.log('SystemSystemSystem',item);
+      if(e == 'System') {
+        f = 'icon-alisystem'
+      }
+      if( b > 48 ) {
+        d = 'red'
+      }else if ( b>24 && b<=48 ) {
+        d = 'yellow'
+      }else if ( b>0 && b<=24 ) {
+        d = '#fff'
+      }
       item.map((itemInner, indexInner) => {
+        // console.log('aaaa',a);
+        let c = '#fff'
+          switch (a) {
+            case 'FIRST':
+              c = 'red'
+              break
+            case 'SECOND':
+              c = 'yellow'
+              break
+            case 'THIRD':
+              c = '#fff'
+              break
+            default:
+              c = '#fff'
+              break
+          }
           // return itemInner
           let obj = {
             head: this.mapData.head[indexInner],
             value: itemInner,
             style: '',
             width: '',
-            color: '#fff'
+            color: '#fff',
+            icon: ''
           }
-          if(indexInner === 5 && itemInner === '未完成') {
-            obj.color = 'red'
+          if(indexInner == this.dataHead.findIndex((a) => a.value == '处理人') || indexInner == this.dataHead.findIndex((a) => a.value == '状态')  || indexInner == this.dataHead.findIndex((a) => a.value == '告警时间') ) {
+            obj.color = c
+          }
+          if(indexInner == this.dataHead.findIndex((a) => a.value == '产线类别') || indexInner == this.dataHead.findIndex((a) => a.value == '未完成数量')  || indexInner == this.dataHead.findIndex((a) => a.value == '异常类别') || indexInner == this.dataHead.findIndex((a) => a.value == '部门')) {
+            obj.color = d
           }
           this.contentStyle[obj.head] && (obj.style = this.contentStyle[obj.head])
           this.contentWidth[obj.head] && (obj.width = this.contentWidth[obj.head])
@@ -432,6 +471,14 @@ export default {
           }
         })
       this.isEventTabel && (objOut.class = this.eventHeadData.parentIdClass[item[this.eventHeadData.parentIdSign]])
+      if(this.isEventTabel) {
+        objOut.value.map((_,i) => {
+          if(i == this.dataHead.findIndex((a) => a.value == '事件描述')) {
+            _.icon = f
+          }
+        })
+      }
+      console.log('objOutobjOutobjOutobjOut',objOut);
       return objOut
     },
     returnData(num) {
@@ -464,6 +511,9 @@ export default {
     height: 100%;
     box-sizing: border-box;
     overflow: hidden;
+    .icon-alisystem {
+      margin-left: 5px;
+    }
     // background-color: #00003f;
     &__box  {
       width: 100%;
@@ -481,7 +531,7 @@ export default {
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
-        padding: 0 5px;
+        padding: 0px;
       }
     }
     &__new  {
@@ -523,7 +573,7 @@ export default {
         text-overflow:ellipsis;
         white-space: nowrap;
         position: relative;
-        padding: 0 5px;
+        padding: 0px;
       }
     }
     &__tr:nth-child(2n) {

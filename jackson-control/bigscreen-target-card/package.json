@@ -1,0 +1,20 @@
+{
+  "name": "bigscreen-target-card",
+  "version": "1.0.8",
+  "label": "大屏指标卡组件",
+  "description": "大屏指标卡组件",
+  "author": "swg &lt;swg@datastory.com.cn&gt;",
+  "private": true,
+  "scripts": {
+    "dev": "dsv serve",
+    "build": "dsv build",
+    "pbl": "dsv publish"
+  },
+  "devDependencies": {
+
+  },
+  "dependencies": { 
+
+  },
+  "libs": []
+}

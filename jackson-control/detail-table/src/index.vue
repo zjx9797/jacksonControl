@@ -51,7 +51,7 @@
               v-for="(itemInner, indexInner) in filterColumn(item.value)"
               :key="indexInner"
               :class="[{ 'detail-table__flex': !itemInner.width }, itemInner.class]"
-              :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight};`"
+              :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight};color: ${itemInner.color};`"
               @click.stop="onItemClick(itemInner, item)"
             >
               {{ itemInner.value }}
@@ -66,7 +66,7 @@
           v-for="(itemInner, indexInner) in filterColumn(leadtimeBody[0].value)"
           :key="indexInner"
           :class="[{ 'detail-table__flex': !itemInner.width }, itemInner.class]"
-          :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight};`"
+          :style="`${itemInner.width ? itemInner.width : ''} ${itemInner.style} line-height: ${lineHeight};color: ${itemInner.color};`"
         >
           {{ itemInner.value }}
         </div>
@@ -255,13 +255,34 @@ export default {
       }
     },
     dealEveryBodyData(item, index) {
+      var a = ''
+      a = item[this.dataHead.findIndex((a) => a.value == '告警级别')]
       const objOut = {
         value: item.map((itemInner, indexInner) => {
+          let c = '#fff'
+          switch (a) {
+            case 'FIRST':
+              c = 'red'
+              break
+            case 'SECOND':
+              c = 'yellow'
+              break
+            case 'THIRD':
+              c = '#fff'
+              break
+            default:
+              c = '#fff'
+              break
+          }
           let obj = {
             head: this.mapData.head[indexInner],
             value: itemInner,
             style: '',
-            width: ''
+            width: '',
+            color: '#fff',
+          }
+          if(indexInner == this.dataHead.findIndex((a) => a.value == '处理人') || indexInner == this.dataHead.findIndex((a) => a.value == '状态')  || indexInner == this.dataHead.findIndex((a) => a.value == '告警时间') ) {
+            obj.color = c
           }
           this.contentStyle[obj.head] && (obj.style = this.contentStyle[obj.head])
           this.contentWidth[obj.head] && (obj.width = this.contentWidth[obj.head])

@@ -59,6 +59,7 @@
               :style="parentDescStyle"
             >
               {{ item.eventDesc }}
+              <span :class="['iconfont',item.icon]"></span>
             </div>
             <div
               class="operate-drill-table__hover"
@@ -203,6 +204,7 @@
 
 <script>
 import eventMixin from './mixins/event-mixin'
+import '@/assets/icon/iconfont.css'
 
 const statusMap = {
   0: '新建',

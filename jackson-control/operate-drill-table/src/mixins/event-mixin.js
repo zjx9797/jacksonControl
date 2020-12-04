@@ -53,6 +53,13 @@ export default {
   },
   computed: {
     eventSlice() {
+      this.eventTableBody.map((_,i) => {
+        _.icon = ''
+        if(_.have_files > 0) {
+          _.icon = 'icon-alifujian2'
+        }
+      })
+      console.log('this.eventTableBody',this.eventTableBody);
       return this.eventTableBody.slice(
         (this.currentPage - 1) * this.pageSize,
         this.currentPage * this.pageSize
@@ -93,16 +100,18 @@ export default {
     // 搜索事件列表
     async searchEventList() {
       this.eventLoading = true
+      let url = this.status === 0 ? `/serv/display/RGo7/jsonctr/realtime/event_unfinished_api` : `/serv/display/RGo7/jsonctr/realtime/event_finished_api`
       const { success, data, message } = await this.ajax({
-        url: `${this.prefix}/event/record/list/unFinishedRecord`,
+        // url: `${this.prefix}/event/record/list/unFinishedRecord`,
+        url,
         data: {
-          finished: this.status === 0 ? false : true
+          // finished: this.status === 0 ? false : true
         }
       })
       this.eventLoading = false
       if (success) {
         console.log('获取事件列表', data)
-        this.eventTableBody = data
+        this.eventTableBody = data.list
         this.total = this.eventTableBody.length
       } else {
         this.$message.error(message)
