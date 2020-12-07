@@ -100,7 +100,7 @@ export default {
     // 搜索事件列表
     async searchEventList() {
       this.eventLoading = true
-      let url = this.status === 0 ? `/serv/display/RGo7/jsonctr/realtime/event_unfinished_api` : `/serv/display/RGo7/jsonctr/realtime/event_finished_api`
+      let url = this.status === 0 ? `/serv/script/RGo7/jsonctr/realtime/event_unfinished_api` : `/serv/script/RGo7/jsonctr/realtime/event_finished_api`
       const { success, data, message } = await this.ajax({
         // url: `${this.prefix}/event/record/list/unFinishedRecord`,
         url,
@@ -111,7 +111,7 @@ export default {
       this.eventLoading = false
       if (success) {
         console.log('获取事件列表', data)
-        this.eventTableBody = data.list
+        this.eventTableBody = data.data
         this.total = this.eventTableBody.length
       } else {
         this.$message.error(message)
